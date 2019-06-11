@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes Projets{% endblock %}
+
+{% block body %}
+    {% if not app.user %}
+        <h1>Venez decouvrire tous mes projets</h1>
+    {% endif %}
+    {% if app.user %}
+        <h1>Vous venez voir les derniers projets {{app.user}} ?</h1>
+    {% endif %}
+    
+    
+<section class="articles">
+    {# Add a project from the database #}
+    {% for projet in projets | reverse %}
+    <article>
+        <h3>{{ projet.Name }}</h3>
+        <div class="content">
+            <p>{{ projet.Description }}</p>
+            <a href="{{ projet.lien }}" target="blank" class="btn btn-outline-primary">Voir le projet</a>
+            <br>
+            <br>
+            {% if is_granted('ROLE_SUPER_ADMIN') %}
+            <a href=""><button class="btn btn-primary">Modifier le projet</button></a>
+            {% endif %}
+        </div>
+    </article>
+    <br>
+    {% endfor %}
+</section>    
+{% endblock %}

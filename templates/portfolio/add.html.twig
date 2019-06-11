@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block title %}Ajouter un Projet{% endblock %}
+{% block body %}
+    {# Forme page #}
+    <h2>Ajouter le projet</h2>
+    {{ form_start(formProject) }}
+
+        {{ form_row(formProject.Name, {'label': 'Nom du projet'}) }} 
+        {{ form_row(formProject.Description, {'label': 'Description du projet'}) }}
+        {{ form_row(formProject.lien, {'label': 'Lien du projet'}) }}<br>
+        <button class="btn btn-outline-success" type="submit">Ajouter le projet</button>
+    {{ form_end(formProject) }}
+    
+    
+    
+{% endblock %}

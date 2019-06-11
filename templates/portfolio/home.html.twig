@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% if app.user %}
+<h1>Bonjour {{app.user}} ravie de vous revoir.</h1>
+{% endif %}
+{% if not app.user %}
+<h1>Bienvenue sur mon port-folio.</h1>
+{% endif %}
+<p>Bonjour je me presente je m'appel Romain j'ai 20 ans je suis developpeur web depuis 4 mois et demis et je suis deja
+    capable de faire un port-folio avec symfony en 1 semaine car oui ce port-folio que vous voyez actuelement bah je
+    l'ai coder en 1 semaine seullement merci a tous. N'oubliez pas : "Seul on vas peut etre plus vite mais en equipe on
+    vas beaucoups plus loin".
+</p>
+{% endblock %}

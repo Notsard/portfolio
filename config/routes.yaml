@@ -1,0 +1,10 @@
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+index:
+    path: /project
+    controller: App\Controller\Project::project
+step2:
+    path: /step2
+    controller: App\Controller\Project::step2
+
